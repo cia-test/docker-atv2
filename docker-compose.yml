@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+  mosquitto:
+    image: "eclipse-mosquitto"
+    ports:
+      - "18883:8883"
+    volumes:
+      - type: bind
+        source: ./mosquitto/mosquitto.conf
+        target: /mosquitto/config/mosquitto.conf
+        read_only: true
+      - type: bind
+        source: ./credentials/ca
+        target: /creds/ca
+        read_only: true
+      - type: bind
+        source: ./credentials/cert
+        target: /creds/cert
+        read_only: true
+    networks:
+      - cia_net
+
+networks:
+  cia_net:
+    name: cia_net
