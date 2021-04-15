@@ -60,6 +60,6 @@ def main(ca, cert, key):
         nrfcloud.stop()
 
 if __name__ == '__main__':
-	main("credentials/ca/cia-ca.pem",
-         "credentials/cert/client1-cert-signed-by-cia.pem",
-         "credentials/cert/client1-privkey.pem")
+	main("credentials/ca/cia-server-ca.pem",
+         "credentials/cert/ci-atv-cert-signed-by-cia-clients.pem",
+         "credentials/cert/ci-atv-privkey.pem")
