@@ -1,0 +1,13 @@
+[Unit]
+Description=Asset Tracker v2 Test
+
+[Service]
+Type=simple
+User=swdev_build
+Group=swdev_build
+WorkingDirectory=/home/swdev_build/docker-atv2
+ExecStart=docker-compose up
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
