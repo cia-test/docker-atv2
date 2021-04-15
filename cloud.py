@@ -32,6 +32,7 @@ class NRFCloud(object):
     def on_connect(self, client, userdata, flags, rc):
         print("connected")
         self.client.subscribe("#")
+        self.client.subscribe("$aws/#")
         print("connected2")
 
     def on_message(self, client, userdata, msg):
@@ -48,7 +49,7 @@ def main(ca, cert, key):
     print(socket.gethostname())
     try:
         nrfcloud = NRFCloud( 
-            "127.0.0.1", 18883, 
+            "dev.testncs.com", 18883,
             ca_certs=ca, 
             certfile=cert, 
             keyfile=key
